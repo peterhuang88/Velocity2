@@ -165,12 +165,15 @@ public class MainActivity extends Activity {
 
         // ALICE"S QUOTES ARE HERE
         text.setText(getQuote());
+        
 
-        Calendar cal = Calendar.getInstance();
-        if (cal.getTimeInMillis()/1000/3600 > 12)
-            goodMorningEvening.setText("Good Morning!");
-        else if (cal.getTimeInMillis()/1000/3600 <= 12)
-            goodMorningEvening.setText("Good Evening!");
+        Calendar c = Calendar.getInstance();
+        int hours = c.get(Calendar.HOUR_OF_DAY);
+
+        if (hours > 12)
+            goodMorningEvening.setText("Good Evening");
+        else
+            goodMorningEvening.setText("Good Morning");
 
 
         populateListView();
