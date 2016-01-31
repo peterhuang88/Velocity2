@@ -1,2 +1,5 @@
-# d4nkm3m3zz
-#Hi Al1ze, shubz, py0tr, r005t13z
+# VELOCITY
+# simple android lock screen replacement/overlay
+# todo list, time, quote,
+#
+# inspired by Momentum Chrome extension
