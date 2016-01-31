@@ -165,7 +165,7 @@ public class MainActivity extends Activity {
 
         // ALICE"S QUOTES ARE HERE
         text.setText(getQuote());
-        
+
 
         Calendar c = Calendar.getInstance();
         int hours = c.get(Calendar.HOUR_OF_DAY);
@@ -175,8 +175,6 @@ public class MainActivity extends Activity {
         else
             goodMorningEvening.setText("Good Morning");
 
-
-        populateListView();
 
         // BROKEN :-(
         //TextView editTextResult = (TextView) findViewById(R.id.editTextResult);
@@ -296,22 +294,6 @@ public class MainActivity extends Activity {
         return quotes[quoteNum];
     }
 
-    public void populateListView(){
-        String[] myItems = {"Red", "Orange", "Yellow", "Green", "Blue", "Violet", "Magenta" , "Blue",
-                "Green", "Blue", "Violet", "Magenta" , "Blue",
-                "Green", "Blue", "Violet", "Magenta" , "Blue",
-                "Green", "Blue", "Violet", "Magenta" , "Blue",
-                "Green", "Blue", "Violet", "Magenta" , "Blue",
-                "Violet", "Magenta" , "Blue", "Violet", "Magenta" , "Blue", "Violet", "Magenta"};
-
-
-        ArrayAdapter<String> adapter;
-        adapter = new ArrayAdapter<String>(this, R.layout.items, myItems);
-        ListView list = (ListView) findViewById(R.id.listView);
-
-        list.setAdapter(adapter);
-
-    }
 
     /**
      * A simple method that sets the screen to fullscreen.  It removes the Notifications bar,

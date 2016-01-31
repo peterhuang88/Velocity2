@@ -35,10 +35,7 @@
         android:textColor="#FFFFFF"
         android:textStyle="bold"/>
 
-    <include layout="@layout/content_main"
-        android:layout_above="@+id/etNewItem"
-        android:layout_alignLeft="@+id/digitalClock"
-        android:layout_alignStart="@+id/digitalClock" />
+
 
     <TextView
         android:layout_width="wrap_content"
