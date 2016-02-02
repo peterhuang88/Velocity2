@@ -69,7 +69,7 @@ public class MainActivity extends Activity {
         startService(new Intent(this, LockScreenService.class));
 
         setContentView(R.layout.activity_main);
-        
+
         //peter
         button = (Button) findViewById(R.id.buttonPrompt);
         result = (TextView) findViewById(R.id.editTextResult);
@@ -140,10 +140,13 @@ public class MainActivity extends Activity {
         Calendar c = Calendar.getInstance();
         int hours = c.get(Calendar.HOUR_OF_DAY);
 
-        if (hours > 12)
-            goodMorningEvening.setText("Good Evening");
+        if (hours <= 11)
+            goodMorningEvening.setText("Good Morning!");
+        else if (hours > 11 && hours < 19)
+            goodMorningEvening.setText("Good Afternoon!");
         else
-            goodMorningEvening.setText("Good Morning");
+            goodMorningEvening.setText("Good Evening!");
+
 
         // background
         RelativeLayout mainlay = (RelativeLayout)findViewById(R.id.back);
