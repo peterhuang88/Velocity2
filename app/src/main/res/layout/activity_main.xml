@@ -19,8 +19,8 @@
         android:layout_alignParentEnd="true"
         android:id="@+id/button"
         android:alpha="0" />
-        <!--android:visibility="visible"
-        android:allowUndo="false" -->
+    <!--android:visibility="visible"
+    android:allowUndo="false" -->
 
 
 

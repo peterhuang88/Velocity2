@@ -60,8 +60,6 @@ public class MainActivity extends Activity {
     private ArrayAdapter<String> itemsAdapter;
     private ListView lvItems;
 
-    String name = null;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,21 +68,13 @@ public class MainActivity extends Activity {
         makeFullScreen();
         startService(new Intent(this, LockScreenService.class));
 
-
         setContentView(R.layout.activity_main);
-
-
+        
         //peter
         button = (Button) findViewById(R.id.buttonPrompt);
         result = (TextView) findViewById(R.id.editTextResult);
 
-
-        final File f = new File("name.txt");
-
-
-        if ( !f.exists() || f.length() == 0 ) {
-
-        //peter add button listener
+            //peter add button listener
 
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -108,15 +98,7 @@ public class MainActivity extends Activity {
                             // get user input and set it to result
                             // edit text
 
-                            readName();
-
-
                             result.setText(userInput.getText());
-                            name = result.getText().toString();
-
-
-
-
 
                         }
                     })
@@ -136,37 +118,25 @@ public class MainActivity extends Activity {
 
                 }
             });
-        }
 
 
-
+        // todo list
         lvItems = (ListView) findViewById(R.id.lvItems);
         items = new ArrayList<String>();
-
-        //PERSIST
         readItems();
         itemsAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, items);
         lvItems.setAdapter(itemsAdapter);
-        //items.add("Finish HW");
-        //items.add("Go lift and get swole");
-
+        items.add("Finish HW");
+        items.add("Go lift and get swole");
         setupListViewListener();
 
-
-
-
-
-
-
-        // change the text of a textView dynamically
+        // quote
         TextView text = (TextView) findViewById (R.id.textView);
-        TextView goodMorningEvening = (TextView) findViewById (R.id.good);
-
-        // ALICE"S QUOTES ARE HERE
         text.setText(getQuote());
 
-
+        // greeting depending on time
+        TextView goodMorningEvening = (TextView) findViewById (R.id.good);
         Calendar c = Calendar.getInstance();
         int hours = c.get(Calendar.HOUR_OF_DAY);
 
@@ -175,15 +145,10 @@ public class MainActivity extends Activity {
         else
             goodMorningEvening.setText("Good Morning");
 
-
-        // BROKEN :-(
-        //TextView editTextResult = (TextView) findViewById(R.id.editTextResult);
-        //editTextResult.setText(name);
-
+        // background
         RelativeLayout mainlay = (RelativeLayout)findViewById(R.id.back);
         mainlay.setBackgroundResource(getDrawableID());
 
-        // END OF ONCREATE HEUHEUHHE
     }
 
 
@@ -208,28 +173,6 @@ public class MainActivity extends Activity {
     }
 
 
-
-    private void readName() {
-        File filesDir = getFilesDir();
-        File todoFile = new File(filesDir, "name.txt");
-        try {
-            name = FileUtils.readFileToString(todoFile);
-        } catch (IOException e) {
-            name = "fuk u scrub";
-        }
-    }
-
-    private void writeName() {
-        File filesDir = getFilesDir();
-        File todoFile = new File(filesDir, "name.txt");
-        try {
-            FileUtils.writeStringToFile(todoFile, name);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-
     public void onAddItem(View v) {
         EditText etNewItem = (EditText) findViewById(R.id.etNewItem);
         String itemText = etNewItem.getText().toString();
@@ -245,7 +188,22 @@ public class MainActivity extends Activity {
     {
         Random rand = new Random();
 
-        int[] drawableArray = {R.drawable.bamboo, R.drawable.bristlegrass, R.drawable.deathvalley, R.drawable.eaglewaterfall,  R.drawable.elephant, R.drawable.fall, R.drawable.lake,  R.drawable.red,  R.drawable.zebras,  R.drawable.transistor, R.drawable.cloudy, R.drawable.rain, R.drawable.goldenpalace, R.drawable.red, R.drawable.silhouette};
+        int[] drawableArray = {
+                R.drawable.bamboo,
+                R.drawable.bristlegrass,
+                R.drawable.cloudy,
+                R.drawable.deathvalley,
+                R.drawable.eaglewaterfall,
+                R.drawable.fall,
+                R.drawable.goldenpalace,
+                R.drawable.lake,
+                R.drawable.mountainrange,
+                R.drawable.rain,
+                R.drawable.red,
+                R.drawable.redwoods,
+                R.drawable.ricepaddy,
+                R.drawable.silhouette,
+                R.drawable.transistor };
         return drawableArray[rand.nextInt(drawableArray.length)];
     }
 
