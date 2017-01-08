@@ -5,5 +5,5 @@ Velocity is a simple android lock screen replacement/overlay featuring a todo li
 
 We aimed to achieve something like Momentum, but without the mass of a laptop, hence Velocity. (hahaha....)
 
-![](https://raw.githubusercontent.com/rustielin/Velocity2/master/app/src/main/res/drawable-xxhdpi/pete.jpg)
+![](https://raw.githubusercontent.com/rustielin/Velocity2/master/app/src/main/res/drawable-xxhdpi/pete.jpg width="450" height="800")
 
